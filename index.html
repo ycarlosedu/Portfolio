@@ -14,14 +14,15 @@
 
   <title>Carlos Silva Portfolio</title>
 </head>
+
 <body>
   <header>
-    <div id="logo">
-      <img src="" alt="">
+    <div class="logo">
+      <img class="logo_img" src="./assets/logo.png" alt="">
     </div>
 
-    <nav id="navbar">
-      <ul id="navbar_items">
+    <nav class="navbar">
+      <ul class="navbar_items">
         <li>
           <a class="navbar_item" href="#home">HOME</a>
         </li>
@@ -41,54 +42,88 @@
     </nav>
   </header>
 
-  <section id="home">
-    <div id="home_content">
-      <div id="home_apresentation">
-        <h1>
-          Hi! I'm <br> 
-          <strong id="home_name">Carlos 
-            <span id="home_last_name">
-              Silva
-            </span> 
-          </strong>
-        </h1>
-        <h2>Front End Developer</h2>
+  <section class="pages" id="home">
+      <div class="home_content">
+        <div class="home_apresentation">
+          <div class="home_apresentation_name">
+            <h1>
+              Hi! I'm <br> 
+              <strong class="home_name init_hidden scale">Carlos 
+                <span class="home_last_name">
+                  Silva
+                </span> 
+              </strong>
+            </h1>
+            <h2>Front End Developer</h2>
+          </div>
+
+          <div class="home_apresentation_introduction init_hidden up">
+            <p>
+              I work as Front End Web Developer using the best practices with ReactJS, Typescript, Styled Components, Redux, NextJS and more!
+            </p>
+            <p>
+              I've created web pages for banks, work safety agencies and hospitals, see some of my projects 
+              <a href="#projects">
+                here!
+              </a> 
+            </p>
+            <div class="buttons_flex">
+              <a href="#contact" class="custom_button btn_normal">
+                Contact Me
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="home_image">
+          <img src="./assets/vector-home.png" class="init_hidden right" alt="">
+        </div>
       </div>
-
-      <div id="home_image">
-        <p>IMAGEM</p>
-      </div>
     </div>
 
     <div class="show_more">
-      <a href="#about">Veja Mais ↓</a>
+      <a href="#about">See More ↓</a>
     </div>
   </section>
 
-  <section id="about">
-    <div id="home_content">
+  <section class="pages" id="about">
+    <div class="home_content">
       <p>About</p>
+      <p class='init_hidden left'>
+        I work as Front End Web Developer using the best practices with ReactJS, Typescript, Styled Components, Redux, NextJS and more!
+      </p>
     </div>
 
     <div class="show_more">
-      <a href="#projects">Veja Mais ↓</a>
+      <a href="#projects">See More ↓</a>
     </div>
   </section>
 
-  <section id="projects">
-    <div id="home_content">
-      <p>About</p>
+  <section class="pages" id="projects">
+    <div class="home_content">
+      <p>projects</p>
+      <p class='init_hidden right'>
+        I work as Front End Web Developer using the best practices with ReactJS, Typescript, Styled Components, Redux, NextJS and more!
+      </p>
     </div>
 
     <div class="show_more">
-      <a href="#contact">Veja Mais ↓</a>
+      <a href="#contact">See More ↓</a>
     </div>
   </section>
 
-  <section id="contact">
-    <div id="home_content">
-      <p>About</p>
+  <section class="pages" id="contact">
+    <div class="home_content">
+      <p>contact</p>
+      <p class='init_hidden'>
+        I work as Front End Web Developer using the best practices with ReactJS, Typescript, Styled Components, Redux, NextJS and more!
+      </p>
     </div>
+    <a href="https://www.freepik.com/vectors/backend">Backend vector created by storyset - www.freepik.com</a>
   </section>
+
+  <script type="module" src="./controllers/scroll.js"></script>
+  <script type="module" src="./controllers/observer.js"></script>
+
 </body>
 </html>
