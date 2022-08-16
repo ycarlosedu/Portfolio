@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
+  <link rel="icon" type="image/png" href="./assets/logo.png"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
@@ -42,14 +43,18 @@
     </nav>
   </header>
 
+  <div class="loader_container">
+    <p>Loading...</p>
+  </div>
+
   <section class="pages" id="home">
       <div class="home_content">
         <div class="home_apresentation">
-          <div class="home_apresentation_name">
+          <div class="home_apresentation_name init_hidden up">
             <h1>
               Hi! I'm <br> 
-              <strong class="home_name init_hidden scale">Carlos 
-                <span class="home_last_name">
+              <strong class="home_name">Carlos
+                <span class="home_last_name type_writer">
                   Silva
                 </span> 
               </strong>
@@ -122,8 +127,9 @@
     <a href="https://www.freepik.com/vectors/backend">Backend vector created by storyset - www.freepik.com</a>
   </section>
 
-  <script type="module" src="./controllers/scroll.js"></script>
+  <script type="module" src="./controllers/hashChanger.js"></script>
   <script type="module" src="./controllers/observer.js"></script>
+  <script type="module" src="./controllers/scroll.js"></script>
 
 </body>
 </html>

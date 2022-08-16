@@ -4,6 +4,7 @@
   --dark-green: #385A64;
   --medium-green: #018673;
   --light-green: #00DFC0;
+  --green-gradient: linear-gradient(to left, var(--light-green) , var(--dark-green));
   --white: #FFF;
 }
 
@@ -13,7 +14,6 @@
 
 html {
   scroll-behavior: smooth;
-
 }
 
 body {
@@ -46,8 +46,10 @@ header {
   justify-content: space-between;
   height: 80px;
   padding: 0 5%;
-  background-color: var(--white);
-  border-bottom: 2px solid var(--gray);
+  border-radius: 0 0 20px 20px;
+  /* background-color: var(--light-green); */
+  background-image: var(--green-gradient);
+  border-bottom: 2px solid var(--black);
   z-index: 2;
 }
 
@@ -78,10 +80,18 @@ header {
   color: var(--black);
   transition: all 0.2s ease-in-out;
   position: relative;
+  /* background-color: var(--medium-green); */
 }
 
 .navbar_item:hover {
-  color: var(--light-green);
+  color: var(--white);
+}
+
+.navbar_item.active {
+  color: var(--white);
+  background: var(--dark-green);
+  padding: 10px;
+  border-radius: 10px;
 }
 
 .navbar_item:after{
@@ -93,7 +103,7 @@ header {
   top:inherit;
   left:0;
   bottom: -5px;
-  background: var(--light-green);
+  background: var(--white);
   transition: 400ms ease all;
 }
 
@@ -228,8 +238,7 @@ header {
 
 .init_hidden_off {
   opacity: 1;
-  transform: scale(1);
-  transform: translateX(0) !important;
+  transform: translateX(0) translateY(0) scale(1) !important;
 }
 
 /* SHOW MORE */
@@ -264,7 +273,7 @@ header {
 .type_writer::after {
   content: '|';
   color: var(--white);
-  margin-left: 5px;
+  margin-right: 55px;
   opacity: 1;
   animation: blink 0.7s infinite;
 }
@@ -277,17 +286,19 @@ header {
 /* -------- BUTTONS VARIANTS -------------- */
 
 .btn_normal {
-  background: var(--light-green);
-  border: none;
+  /* background: var(--light-green); */
+  background-image: var(--green-gradient);
+  /* border: 1px solid var(--light-green); */
   z-index: 1;
 }
+
 .btn_normal:after {
   position: absolute;
   content: "";
-  width: 100%;
+  width: 98%;
   height: 0;
-  top: 0;
-  left: 0;
+  top: 1%;
+  left: 1%;
   z-index: -1;
   border-radius: 10px;
   background-color: var(--black);
@@ -295,11 +306,12 @@ header {
 }
 .btn_normal:hover {
   color: var(--light-green);
+  background-color: transparent;
 }
 .btn_normal:hover:after {
   top: auto;
-  bottom: 0;
-  height: 100%;
+  bottom: 3%;
+  height: 94%;
 }
 .btn_normal:active {
   top: 2px;

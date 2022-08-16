@@ -1,60 +1,75 @@
-window.addEventListener('load', function() {
-  location.href = "#home";
+function findPos(obj) {
+  var curtop = 0;
+  if (obj.offsetParent) {
+      do {
+          curtop += obj.offsetTop;
+      } while (obj = obj.offsetParent);
+  return [curtop];
+  }
+}
+
+function moveDown() {
+  switch (location.hash){
+    case '#home':
+      window.scroll(0,findPos(document.getElementById("about")));
+      location.href = '#about'
+      break;
+    case '#about':
+      window.scroll(0,findPos(document.getElementById("projects")));
+      location.href = '#projects'
+      break;
+    case '#projects':
+      window.scroll(0,findPos(document.getElementById("contact")));
+      location.href = '#contact'
+      break;
+    case '#contact':
+      window.scroll(0,findPos(document.getElementById("contact")));
+      break;
+  }
+}
+
+function moveUp() {
+  switch (location.hash){
+    case '#home':
+      window.scroll(0,findPos(document.getElementById("home")));
+      break;
+    case '#about':
+      window.scroll(0,findPos(document.getElementById("home")));
+      location.href = '#home'
+      break;
+    case '#projects':
+      window.scroll(0,findPos(document.getElementById("about")));
+      location.href = '#about'
+      break;
+    case '#contact':
+      window.scroll(0,findPos(document.getElementById("projects")));
+      location.href = '#projects'
+      break;
+  }
+}
+
+window.addEventListener('wheel', (event) => {
+  if (event.deltaY > 0) {
+    moveDown()
+    return
+  }
+  moveUp()
+});
+
+const eventKey = {
+  'ArrowDown': moveDown,
+  'PageDown': moveDown,
+  '2': moveDown,
+  ' ': moveDown,
+  'ArrowUp': moveUp,
+  'PageUp': moveUp,
+  '8': moveUp,
+}
+
+window.addEventListener('keydown', (event) => {
+  const move = eventKey[event.key]
+  if (move) {
+    event.preventDefault()
+    move()
+  }
 })
-
-function getElementPosition(element) {
-  if (document.querySelector(`#${element}`). getBoundingClientRect().y === 100 ||
-  document.querySelector(`#${element}`). getBoundingClientRect().y === -100) return true
-}
-
-function MoveUp() {
-  if (location.hash === '#home' && getElementPosition('home')) {
-    return
-  }
-  if (location.hash === '#about' && getElementPosition('about')) {
-    document.querySelector('a[href="#home"]').click();
-    return
-  }
-  if (location.hash === '#projects' && getElementPosition('projects')) {
-    document.querySelector('a[href="#about"]').click();
-    return
-  }
-  if (location.hash === '#contact' && getElementPosition('contact')) {
-    document.querySelector('a[href="#projects"]').click();
-    return
-  }
-}
-
-function MoveDown() {
-  if (location.hash === '#home' && getElementPosition('home')) {
-    document.querySelector('a[href="#about"]').click();
-    return
-  }
-  if (location.hash === '#about' && getElementPosition('about')) {
-    document.querySelector('a[href="#projects"]').click();
-    return
-  }
-  if (location.hash === '#projects' && getElementPosition('projects')) {
-    document.querySelector('a[href="#contact"]').click();
-    return
-  }
-  if (location.hash === '#contact' && getElementPosition('contact')) {
-    return
-  }
-}
-
-function Scroll(e) {
-  window.removeEventListener('scroll')
-  // console.log(e.path[1])
-  console.log(location.hash === '#home' && getElementPosition('home'))
-  // mesma posição
-  if (e.scrollY === lastScrollTop) return;
-
-  this.scrollY < lastScrollTop ? MoveUp() :  MoveDown()
-  lastScrollTop = this.scrollY;
-  window.addEventListener('scroll', Scroll(e))
-}
-
-var lastScrollTop = 0;
-
-window.addEventListener('scroll', e => Scroll(e))

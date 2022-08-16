@@ -1,3 +1,4 @@
+import { activeNavItem } from './hashChanger.js';
 import { typeWriter } from './typeWriter.js';
 
 const observer = new IntersectionObserver(entries => {
@@ -21,4 +22,18 @@ Array.from(document.querySelectorAll('.init_hidden')).forEach(element => {
 
 Array.from(document.querySelectorAll('.type_writer')).forEach(element => {
   observer.observe(element)
+})
+
+const observerScroll = new IntersectionObserver(entries => {
+  entries.forEach(entry => { 
+    if (entry.intersectionRatio >= 0.5) {
+      activeNavItem(entry.target.id)
+    }
+  })
+}, {
+  threshold: 0.5
+});
+
+Array.from(document.getElementsByClassName('pages')).forEach(element => {
+  observerScroll.observe(element)
 })
