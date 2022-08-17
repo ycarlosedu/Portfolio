@@ -173,6 +173,11 @@ header {
   width: 80%;
 }
 
+/* PROJECTS */
+
+#projects {
+  background-color: var(--medium-green)
+}
 
 /* GLOBAL */
 
@@ -268,9 +273,9 @@ header {
   color: var(--light-green);
 }
 
-/* TYPE WRITER */
+/* WRITING */
 
-.type_writer::after {
+.writing::after {
   content: '|';
   color: var(--white);
   margin-right: 55px;

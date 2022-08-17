@@ -1,11 +1,11 @@
-export function typeWriter(element) {
+export function typeWriter(element, noSpaces) {
   const textArray = element.textContent.split('')
+  const newText = noSpaces ? textArray.map((element => element.trim())).filter(element => element !== '') : textArray
   element.textContent = ''
 
-  textArray.forEach((letter, index) => {
+  newText.forEach((letter, index) => {
     setTimeout(() => {
       element.textContent += letter
-    }, 75 * index) //miliseconds timeout
+    }, 150 * index) //miliseconds timeout
   })
-
 }

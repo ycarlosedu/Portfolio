@@ -8,53 +8,41 @@ function findPos(obj) {
   }
 }
 
+const moveToDown = {
+  '#home': 'about',
+  '#about': 'projects',
+  '#projects': 'contact',
+  '#contact': 'contact',
+}
+
+const moveToUp = {
+  '#home': 'home',
+  '#about': 'home',
+  '#projects': 'about',
+  '#contact': 'projects',
+}
+
+function scrollToElement(element) {
+  window.scroll(0,findPos(document.getElementById(element)));
+  location.href = `#${element}`
+}
+
 function moveDown() {
-  switch (location.hash){
-    case '#home':
-      window.scroll(0,findPos(document.getElementById("about")));
-      location.href = '#about'
-      break;
-    case '#about':
-      window.scroll(0,findPos(document.getElementById("projects")));
-      location.href = '#projects'
-      break;
-    case '#projects':
-      window.scroll(0,findPos(document.getElementById("contact")));
-      location.href = '#contact'
-      break;
-    case '#contact':
-      window.scroll(0,findPos(document.getElementById("contact")));
-      break;
-  }
+  scrollToElement(moveToDown[location.hash]);
 }
 
 function moveUp() {
-  switch (location.hash){
-    case '#home':
-      window.scroll(0,findPos(document.getElementById("home")));
-      break;
-    case '#about':
-      window.scroll(0,findPos(document.getElementById("home")));
-      location.href = '#home'
-      break;
-    case '#projects':
-      window.scroll(0,findPos(document.getElementById("about")));
-      location.href = '#about'
-      break;
-    case '#contact':
-      window.scroll(0,findPos(document.getElementById("projects")));
-      location.href = '#projects'
-      break;
-  }
+  scrollToElement(moveToUp[location.hash]);
 }
 
 window.addEventListener('wheel', (event) => {
+  event.preventDefault()
   if (event.deltaY > 0) {
     moveDown()
     return
   }
   moveUp()
-});
+}, {passive: false});
 
 const eventKey = {
   'ArrowDown': moveDown,

@@ -9,6 +9,7 @@ const observer = new IntersectionObserver(entries => {
       }
       if (entry.target.className.includes('type_writer')){
         typeWriter(entry.target)
+        entry.target.classList.remove('type_writer')
       }
     }
   })
