@@ -1,8 +1,3 @@
-window.addEventListener('load', function() {
-  location.href = "#home";
-  document.querySelector(`a[href="#home"]`).classList.add('active')
-})
-// window.addEventListener('hashchange', () => activeNavItem());
 
 export function activeNavItem(elementID) {
   const menuItems = document.getElementsByClassName('navbar_item')

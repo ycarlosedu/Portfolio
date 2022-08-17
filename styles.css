@@ -1,11 +1,13 @@
 :root {
   --black: #2E2E2E;
+  --lowOpacity: rgba(46, 46, 46, 0.75);
   --gray: #E7E7E7;
   --dark-green: #385A64;
   --medium-green: #018673;
   --light-green: #00DFC0;
-  --green-gradient: linear-gradient(to left, var(--light-green) , var(--dark-green));
   --white: #FFF;
+  --green-gradient: linear-gradient(to left, var(--light-green) , var(--dark-green));
+  --dark-gradient: linear-gradient(to top, var(--medium-green) , var(--dark-green));
 }
 
 ::-webkit-scrollbar {
@@ -36,6 +38,33 @@ a:hover {
   color: var(--light-green);
 }
 
+/* LOADER */
+
+.loader_container {
+  width: 100vw;
+  height: 100vh;
+  /* background-color: var(--lowOpacity); */
+  background-image: var(--green-gradient);
+  display: grid;
+  place-items: center;
+  trasition: all 3s ease-in-out;
+}
+
+.loader {
+  border: 10px solid var(--white); 
+  border-top: 10px solid var(--light-green); 
+  margin: auto;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 /* HEADER */
 
 header {
@@ -49,7 +78,7 @@ header {
   border-radius: 0 0 20px 20px;
   /* background-color: var(--light-green); */
   background-image: var(--green-gradient);
-  border-bottom: 2px solid var(--black);
+  /* border-bottom: 2px solid var(--white); */
   z-index: 2;
 }
 
@@ -90,6 +119,7 @@ header {
 .navbar_item.active {
   color: var(--white);
   background: var(--dark-green);
+  /* background-image: var(--dark-gradient); */
   padding: 10px;
   border-radius: 10px;
 }
@@ -115,7 +145,8 @@ header {
 /* HOME */
 
 #home {
-  background-image: url('./assets/bg-home.jpg');
+  /* background-image: url('./assets/bg-home.jpg'); */
+  background-color: var(--black);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -173,10 +204,22 @@ header {
   width: 80%;
 }
 
+/* ABOUT */
+
+#about {
+  background-image: var(--green-gradient)
+}
+
 /* PROJECTS */
 
 #projects {
-  background-color: var(--medium-green)
+  background-color: var(--black)
+}
+
+/* CONTACT */
+
+#contact {
+  background-image: var(--green-gradient)
 }
 
 /* GLOBAL */
