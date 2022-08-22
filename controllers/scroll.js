@@ -12,6 +12,7 @@ const moveToDown = {
   '#home': 'about',
   '#about': 'projects',
   '#projects': 'contact',
+  '#git_projects': 'contact',
   '#contact': 'contact',
 }
 
@@ -19,6 +20,7 @@ const moveToUp = {
   '#home': 'home',
   '#about': 'home',
   '#projects': 'about',
+  '#git_projects': 'about',
   '#contact': 'projects',
 }
 

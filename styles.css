@@ -22,10 +22,9 @@ html {
 body {
   width: 100%;
   font-family: 'Roboto', sans-serif;
-  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   color: var(--white);
   /* overflow-x: hidden; */
 }
@@ -264,6 +263,12 @@ header {
   position: relative;
 }
 
+/* PROJECTS */
+
+#git_projects {
+  background-image: var(--green-gradient)
+}
+
 /* CONTACT */
 
 #contact {
@@ -271,6 +276,15 @@ header {
 }
 
 /* GLOBAL */
+
+.double_pages {
+  width: 100vw;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-behavior: smooth; 
+}
 
 .pages {
   width: 90%;
@@ -281,6 +295,12 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+}
+
+.pages.double {
+  min-width: 90vw;
+  max-width: 90vw;
+  flex: 1;
 }
 
 .section_container {
@@ -333,6 +353,11 @@ header {
 }
 
 .absolute_left {
+  position: absolute;
+  left: 0;
+}
+
+.absolute_right {
   position: absolute;
   right: 0;
 }
