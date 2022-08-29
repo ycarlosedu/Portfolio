@@ -1,0 +1,24 @@
+.loader_container {
+  width: 100vw;
+  height: 100vh;
+  /* background-color: var(--lowOpacity); */
+  background-image: var(--green-gradient);
+  display: grid;
+  place-items: center;
+  trasition: all 3s ease-in-out;
+}
+
+.loader {
+  border: 10px solid var(--white); 
+  border-top: 10px solid var(--light-green); 
+  margin: auto;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

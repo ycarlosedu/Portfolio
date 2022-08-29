@@ -1,0 +1,38 @@
+footer {
+  position: absolute;
+  bottom: 0;
+  background-color: var(--black);
+  width: 100vw;
+  height: 120px;
+  border-radius: 20px 20px 0 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 15px 30px;
+  box-sizing: border-box;
+  color: var(--gray);
+  font-size: 14px;
+}
+
+.divFooter {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.divFooter > h4 {
+  font-size: 18px;
+  margin-bottom: 5px;
+  color: var(--light-green);
+  text-align: center;
+}
+
+.tecnoligies_icons {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

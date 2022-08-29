@@ -1,0 +1,49 @@
+/* WITH ACTION */
+
+.display {
+  position: relative;
+  opacity: 0;
+  transform: translateY(-50%);
+  transition: all 0.3s ease-in-out;
+}
+
+.display.on {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.display.relative {
+  position: absolute;
+}
+
+/* ON SCROLL */
+
+.init_hidden {
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+
+.init_hidden.left {
+  transform: translateX(-50%);
+}
+
+.init_hidden.right {
+  transform: translateX(50%);
+}
+
+.init_hidden.up {
+  transform: translateY(-50%);
+}
+
+.init_hidden.down {
+  transform: translateY(50%);
+}
+
+.init_hidden.scale {
+  transform: scale(0);
+}
+
+.init_hidden_off {
+  opacity: 1;
+  transform: translateX(0) translateY(0) scale(1) !important;
+}

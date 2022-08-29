@@ -7,11 +7,17 @@ export function activeNavItem(elementID) {
   element.classList.add('active')
 }
 
-window.addEventListener('hashchange', (event) => {
+window.addEventListener('hashchange', () => {
   const gitProjects = document.getElementById('navbar_git_projects')
   if (location.hash === '#git_projects') {
-    gitProjects.classList.remove('display_off')
+    gitProjects.classList.remove('relative')
+    setTimeout(() => {
+      gitProjects.classList.add('on')
+    }, 300) 
     return
   }
-  gitProjects.classList.add('display_off')
+    gitProjects.classList.remove('on')
+    setTimeout(() => {
+      gitProjects.classList.add('relative')
+    }, 500) 
 })

@@ -1,0 +1,52 @@
+
+/* -------- NORMAL -------------- */
+
+.btn_normal {
+  /* background: var(--light-green); */
+  background-image: var(--green-gradient);
+  /* border: 1px solid var(--light-green); */
+  z-index: 1;
+}
+
+.btn_normal:after {
+  position: absolute;
+  content: "";
+  width: 98%;
+  height: 0;
+  top: 1%;
+  left: 1%;
+  z-index: -1;
+  border-radius: 10px;
+  background-color: var(--black);
+  transition: all 0.3s ease;
+}
+
+.btn_normal:hover {
+  color: var(--light-green);
+  background-color: transparent;
+}
+
+.btn_normal:hover:after {
+  top: auto;
+  bottom: 3%;
+  height: 94%;
+}
+
+.btn_normal:active,
+.btn_secondary:active {
+  top: 4px;
+}
+
+/* -------- SECONDARY -------------- */
+
+.btn_secondary {
+  background: var(--black);
+  color: var(--light-green);
+  border: 2px solid var(--black);
+  box-shadow: var(--normal-shadow);
+}
+
+.btn_secondary:hover {
+  background: var(--light-green);
+  color: var(--black);
+}

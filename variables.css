@@ -1,0 +1,13 @@
+:root {
+  --black: #2E2E2E;
+  --lowOpacity: rgba(46, 46, 46, 0.75);
+  --gray: #E7E7E7;
+  --dark-green: #385A64;
+  --medium-green: #018673;
+  --light-green: #00DFC0;
+  --white: #FFF;
+  --green-gradient: linear-gradient(to left, var(--light-green) , var(--dark-green));
+  --dark-gradient: linear-gradient(to top, var(--medium-green) , var(--dark-green));
+  --bg-gradient: linear-gradient(-45deg, var(--white), var(--light-green), var(--medium-green), var(--dark-green));
+  --normal-shadow: black 5px 5px 5px;
+}
