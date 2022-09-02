@@ -2,6 +2,21 @@
   display: none;
 }
 
+::-webkit-scrollbar-track {
+  background: var(--lowOpacity);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--light-green);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--medium-green);
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -19,6 +34,7 @@ body {
 a {
   text-decoration: none;
   color: var(--white);
+  cursor: pointer;
 }
 
 a:hover {
@@ -162,7 +178,79 @@ a:hover {
   z-index: 2;
 }
 
-/* PROJECTS */
+.projects_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 300px);
+  justify-content: center;
+  grid-gap: 15px;
+  height: 100%;
+  width: 100%;
+  overflow-y: scroll;
+}
+
+.projects_grid::-webkit-scrollbar {
+  display: block;
+  width: 10px;
+}
+
+.project_card {
+  background-color: var(--light-green);
+  width: 100%;
+  height: 300px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.project_card > img {
+  width: 100%;
+}
+
+.project_card p {
+  color: var(--light-green);
+}
+
+.project_infos {
+  position: absolute;
+  z-index: 3;
+  background: var(--lowOpacity);
+  bottom: 0;
+  width: 90%;
+  height: 50%;
+  transition: all 0.3s ease-in-out;
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 5%;
+  opacity: 0;
+
+  background: var(--polimorphism-background);
+  box-shadow: var(--polimorphism-shadow);
+  backdrop-filter: var(--polimorphism-filter);
+  -webkit-backdrop-filter: var(--polimorphism-filter);
+  border: var(--polimorphism-border);
+}
+
+.project_card:hover > .project_infos {
+  opacity: 1;
+}
+
+.project_languages {
+  display: flex;
+  overflow-x: scroll;
+  width: 100%;
+  padding-bottom: 5px;
+}
+
+.project_languages::-webkit-scrollbar {
+  display: block;
+  height: 5px;
+}
+
+/* GIT PROJECTS */
 
 #git_projects {
   background-image: var(--green-gradient)
@@ -174,6 +262,25 @@ a:hover {
   background-image: var(--green-gradient)
 }
 
+.contact_content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.contact_form {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.contact_form > input {
+  width: 45%;
+}
+
 /* GLOBAL */
 
 .double_pages {
@@ -182,7 +289,7 @@ a:hover {
   flex-wrap: nowrap;
   overflow-x: scroll;
   overflow-y: hidden;
-  scroll-behavior: smooth; 
+  scroll-behavior: smooth;
 }
 
 .pages {
@@ -211,10 +318,16 @@ a:hover {
   align-items: center;
   justify-content: space-around;
   gap: 2em;
+  z-index: 2;
 }
 
 .section_header {
   font-size: 24px;
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .section_header h2::before {

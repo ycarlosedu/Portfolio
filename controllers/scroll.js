@@ -1,10 +1,10 @@
 function findPos(obj) {
   var curtop = 0;
   if (obj.offsetParent) {
-      do {
-          curtop += obj.offsetTop;
-      } while (obj = obj.offsetParent);
-  return [curtop];
+    do {
+      curtop += obj.offsetTop;
+    } while (obj = obj.offsetParent);
+    return [curtop];
   }
 }
 
@@ -25,7 +25,7 @@ const moveToUp = {
 }
 
 function scrollToElement(element) {
-  window.scroll(0,findPos(document.getElementById(element)));
+  window.scroll(0, findPos(document.getElementById(element)));
   location.href = `#${element}`
 }
 
@@ -44,7 +44,7 @@ window.addEventListener('wheel', (event) => {
     return
   }
   moveUp()
-}, {passive: false});
+}, { passive: false });
 
 const eventKey = {
   'ArrowDown': moveDown,

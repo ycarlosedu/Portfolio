@@ -13,11 +13,11 @@ window.addEventListener('hashchange', () => {
     gitProjects.classList.remove('relative')
     setTimeout(() => {
       gitProjects.classList.add('on')
-    }, 300) 
+    }, 300)
     return
   }
-    gitProjects.classList.remove('on')
-    setTimeout(() => {
-      gitProjects.classList.add('relative')
-    }, 500) 
+  gitProjects.classList.remove('on')
+  setTimeout(() => {
+    gitProjects.classList.add('relative')
+  }, 500)
 })

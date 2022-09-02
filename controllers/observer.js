@@ -26,7 +26,7 @@ Array.from(document.querySelectorAll('.type_writer')).forEach(element => {
 })
 
 const observerScroll = new IntersectionObserver(entries => {
-  entries.forEach(entry => { 
+  entries.forEach(entry => {
     if (entry.intersectionRatio >= 0.5) {
       activeNavItem(entry.target.id)
     }
