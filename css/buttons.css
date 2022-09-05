@@ -43,7 +43,6 @@
   background: var(--black);
   color: var(--light-green);
   border: 2px solid var(--black);
-  box-shadow: var(--normal-shadow);
 }
 
 .btn_secondary:hover {

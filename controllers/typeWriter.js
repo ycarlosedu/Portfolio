@@ -1,9 +1,8 @@
-export function typeWriter(element, noSpaces) {
-  const textArray = element.textContent.split('')
-  const newText = noSpaces ? textArray.map((element => element.trim())).filter(element => element !== '') : textArray
+export function typeWriter(element) {
+  const textArray = element.innerText.split('')
   element.textContent = ''
 
-  newText.forEach((letter, index) => {
+  textArray.forEach((letter, index) => {
     setTimeout(() => {
       element.textContent += letter
     }, 150 * index) //miliseconds timeout

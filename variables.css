@@ -9,10 +9,11 @@
   --green-gradient: linear-gradient(to left, var(--light-green) , var(--dark-green));
   --dark-gradient: linear-gradient(to top, var(--medium-green) , var(--dark-green));
   --bg-gradient: linear-gradient(-45deg, var(--white), var(--light-green), var(--medium-green), var(--dark-green));
+  --bg-image-gradient: linear-gradient(to left, transparent, #2E2E2E05, var(--black));
   --normal-shadow: black 5px 5px 5px;
 
   --polimorphism-background: rgba( 0, 0, 0, 0.45 );
-  --polimorphism-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  --polimorphism-shadow: 0 8px 32px 0 var(--lowOpacity);
   --polimorphism-filter: blur( 6px );
   --polimorphism-border: 1px solid rgba( 255, 255, 255, 0.18 );
 }

@@ -66,24 +66,21 @@ window.addEventListener('keydown', (event) => {
 
 // MOBILE SCROLL
 
-// let screenY = 0
+let screenY = 0
 
-// window.addEventListener('touchstart', (event) => {
-//   console.log(event.changedTouches[0].screenY)
-//   screenY = event.changedTouches[0].screenY
-// })
+window.addEventListener('touchstart', (event) => {
+  event.preventDefault()
+  screenY = event.changedTouches[0].screenY
+}, { passive: false })
 
-// window.addEventListener('touchend', (event) => {
-//   console.log(event.changedTouches[0].screenY)
-//   if (screenY > event.changedTouches[0].screenY) {
-//     console.log('down')
-//     moveDown()
-//     return
-//   }
-//   console.log('up')
-//   moveUp()
-// })
+window.addEventListener('touchend', (event) => {
+  if (screenY > event.changedTouches[0].screenY) {
+    moveDown()
+    return
+  }
+  moveUp()
+})
 
-// window.addEventListener('touchmove', (event) => {
-//   event.preventDefault()
-// }, {passive: false})
+window.addEventListener('touchmove', (event) => {
+  event.preventDefault()
+}, { passive: false })
