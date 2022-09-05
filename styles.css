@@ -124,6 +124,7 @@ a:hover {
   width: 100%;
   max-width: 600px;
   opacity: 0.8;
+  background-color: var(--light-green);
 }
 
 .home_image_bg {
@@ -177,8 +178,21 @@ a:hover {
   justify-content: space-around;
 }
 
+.about_image {
+  box-sizing: border-box;
+  display: grid;
+  place-items: center;
+  width: 440px;
+  height: 440px;
+  background-image: url('./assets/profile-circle.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+
+}
+
 .about_image img {
-  width: 100%;
+  width: 310px;
   border-radius: 50%;
   border: 3px solid var(--black);
   filter: grayscale(1);

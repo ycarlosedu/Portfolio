@@ -66,10 +66,17 @@ window.addEventListener('keydown', (event) => {
 
 // MOBILE SCROLL
 
+const moveTouch = {
+  'a': true,
+  'button': true,
+  'input': true,
+}
+
 let screenY = 0
 
 window.addEventListener('touchstart', (event) => {
-  event.preventDefault()
+  const move = moveTouch[event.target.localName]
+  !move && event.preventDefault()
   screenY = event.changedTouches[0].screenY
 }, { passive: false })
 
