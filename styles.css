@@ -286,15 +286,44 @@ a:hover {
   border: var(--polimorphism-border);
 }
 
+.project_infos_content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.project_infos_content > span {
+  font-weight: normal;
+}
+
 .project_card:hover > .project_infos {
   opacity: 1;
+}
+
+.project_topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.project_topics > span {
+  background-color: var(--light-green);
+  padding: 5px 10px;
+  border-radius: 10px;
+  /* font-size: 12px; */
 }
 
 .project_languages {
   display: flex;
   overflow-x: scroll;
   width: 100%;
+  gap: 8px;
   padding-bottom: 5px;
+}
+
+.project_languages > img {
+  width: 48px;
+  height: 48px;
 }
 
 .project_languages::-webkit-scrollbar {

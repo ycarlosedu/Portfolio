@@ -273,40 +273,32 @@
           <h2 class="type_writer">GITHUB PROJECTS</h2>
         </div>
 
-        <div class="projects_grid">
-          <div class="project_card">
+        <div id="repos-list" class="projects_grid">
+          <!-- <a target="_blank" href="https://dragons-react.netlify.app/" class="project_card">
             <img src="/assets/logo.png" alt="">
             <div class="project_infos">
-              <p>NOME DO PROJETO</p>
-              <span>Projeto realizado com fins de estudo.</span>
-              <p>Tecnologias utilizadas</p>
-              <div class="project_languages">
-                <img src="/assets/icons/javascript.svg" alt="">
-                <img src="/assets/icons/css.svg" alt="">
-                <img src="/assets/icons/html.svg" alt="">
-                <img src="/assets/icons/html.svg" alt="">
-                <img src="/assets/icons/html.svg" alt="">
-                <img src="/assets/icons/html.svg" alt="">
-                <img src="/assets/icons/html.svg" alt="">
+              <div class="project_infos_content">
+                <p>Dragon-React</p>
+                <span>Project requested in an job interview. This project has a SignIn/SignUp page and a CRUD of
+                  dragons.</span>
+              </div>
+              <div class="project_infos_content">
+                <p>Technologies Used</p>
+                <div class="project_languages">
+                  <img src="/assets/icons/react.svg" alt="">
+                  <img src="/assets/icons/typescript.svg" alt="">
+                </div>
               </div>
             </div>
-            </d>
-
-            <div class="project_card">
-              <img class="coming_soon" src="/assets/coming-soon.png" alt="">
-            </div>
-
-            <div class="project_card">
-              <img class="coming_soon" src="/assets/coming-soon.png" alt="">
-            </div>
-          </div>
+          </a> -->
         </div>
+      </div>
 
-        <div class="show_more">
-          <a href="#contact">See More
-            <span class="material-symbols-outlined" translate="no">keyboard_double_arrow_down</span>
-          </a>
-        </div>
+      <div class="show_more">
+        <a href="#contact">See More
+          <span class="material-symbols-outlined" translate="no">keyboard_double_arrow_down</span>
+        </a>
+      </div>
     </section>
   </div>
 
@@ -330,9 +322,11 @@
               </svg>
               Mail
             </a>
-            <a class="social_medias_link"  target="_blank" href="https://www.linkedin.com/in/silvacarlosoliveira/?locale=en_US">
-              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin">
+            <a class="social_medias_link" target="_blank"
+              href="https://www.linkedin.com/in/silvacarlosoliveira/?locale=en_US">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" role="img" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="feather feather-linkedin">
                 <title>LinkedIn</title>
                 <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
                 <rect x="2" y="9" width="4" height="12"></rect>
@@ -340,9 +334,10 @@
               </svg>
               LinkedIn
             </a>
-            <a class="social_medias_link"  target="_blank" href="https://github.com/ycarlosedu">
-              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github">
+            <a class="social_medias_link" target="_blank" href="https://github.com/ycarlosedu">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" role="img" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="feather feather-github">
                 <title>GitHub</title>
                 <path
                   d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
@@ -411,6 +406,7 @@
   <script type="module" src="./controllers/observer.js"></script>
   <script type="module" src="./controllers/scroll.js"></script>
   <script type="module" src="./controllers/loader.js"></script>
+  <script type="module" src="./controllers/gitRepos.js"></script>
 
 </body>
 
