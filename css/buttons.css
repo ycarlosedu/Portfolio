@@ -21,7 +21,7 @@
   transition: all 0.3s ease;
 }
 
-.btn_normal:hover {
+.btn_normal:hover:not(:disabled) {
   color: var(--light-green);
   background-color: transparent;
 }
@@ -32,9 +32,15 @@
   height: 94%;
 }
 
-.btn_normal:active,
-.btn_secondary:active {
+.btn_normal:active:not(:disabled),
+.btn_secondary:active:not(:disabled) {
   top: 4px;
+}
+
+.btn_normal:disabled,
+.btn_secondary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 /* -------- SECONDARY -------------- */
@@ -45,7 +51,7 @@
   border: 2px solid var(--black);
 }
 
-.btn_secondary:hover {
+.btn_secondary:hover:not(:disabled) {
   background: var(--light-green);
   color: var(--black);
 }
